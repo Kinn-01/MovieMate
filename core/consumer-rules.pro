@@ -178,7 +178,3 @@
 
 # Keep annotations
 -keepattributes *Annotation*
-
-# keep jsonup
--keep class org.jsoup.** { *; }
--dontwarn org.jsoup.**

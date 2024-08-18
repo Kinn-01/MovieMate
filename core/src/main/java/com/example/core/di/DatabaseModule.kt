@@ -1,6 +1,8 @@
 package com.example.core.di
 
 import android.content.Context
+import net.sqlcipher.database.SQLiteDatabase
+import net.sqlcipher.database.SupportFactory
 import androidx.room.Room
 import com.example.core.data.dataSource.local.room.MovieDao
 import com.example.core.data.dataSource.local.room.MovieDatabase
@@ -14,13 +16,19 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 class DatabaseModule {
+
+    private val passphrase = SQLiteDatabase.getBytes("moviemate".toCharArray())
+    private val factory = SupportFactory(passphrase)
+
     @Singleton
     @Provides
     fun provideDatabase(@ApplicationContext context: Context): MovieDatabase =
         Room.databaseBuilder(
             context,
             MovieDatabase::class.java, "Movie.db"
-        ).fallbackToDestructiveMigration().build()
+        ).fallbackToDestructiveMigration()
+            .openHelperFactory(factory)
+            .build()
 
     @Provides
     fun provideMovieDao(db: MovieDatabase): MovieDao =

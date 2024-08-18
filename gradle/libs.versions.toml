@@ -16,6 +16,9 @@ navigationUiKtx = "2.7.7"
 ksp = "1.9.0-1.0.13"
 nav = "2.7.7"
 jsoup = "1.18.1"
+androidDatabaseSqlcipher = "4.5.4"
+leakcanaryAndroid = "2.14"
+sqliteKtx = "2.4.0"
 
 retrofit = "2.11.0"
 glide = "4.16.0"
@@ -44,6 +47,9 @@ androidx-lifecycle-livedata-ktx = { group = "androidx.lifecycle", name = "lifecy
 androidx-lifecycle-viewmodel-ktx = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecycleViewmodelKtx" }
 androidx-navigation-fragment-ktx = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "navigationFragmentKtx" }
 androidx-navigation-ui-ktx = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "navigationUiKtx" }
+androidx-sqlite-ktx = { module = "androidx.sqlite:sqlite-ktx", version.ref = "sqliteKtx" }
+android-database-sqlcipher = { module = "net.zetetic:android-database-sqlcipher", version.ref = "androidDatabaseSqlcipher" }
+leakcanary-android = { module = "com.squareup.leakcanary:leakcanary-android", version.ref = "leakcanaryAndroid" }
 
 
 # retrofit
